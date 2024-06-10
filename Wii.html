@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menù Lateral con Css</title>
+	<link rel="stylesheet" href="ESTILOS/style.css">
+</head>
+<body>
+	<header class="header">
+		<div class="container">
+		<div class="btn-menu">
+			<label for="btn-menu">
+					<img src="IMG/m.png" alt="">
+			</label>
+		</div>
+			<div class="logo">
+				<img src="IMG/k.png" alt="Logo" class="icon">
+			</div>
+			<nav class="menu">
+				<a href="DATOS C/Chef.html">Inicio</a>
+				<a href="DATOS C/cont.html">Contactos</a>
+				<a href="DATOS C/Registro.html">Registro</a>
+				<a href="DATOS C/InicioS.html">SIGN IN</a>
+			</nav>
+		</div>
+	</header>
+	<div class="tit">
+		<h1>DELICIAS CULINARIAS EN UN CLIC</h1>
+		<h2>Recetas Destacadas</h2>
+	</div>
+	<div class="imagen-container">
+		<div class="imagen-con-nombre">
+			<a href="RECETAS/Rd1.html">
+				<img src="IMG/yk1.webp" alt="Imagen 1">
+			</a>			
+			<p>Pique Macho</p>
+		</div>
+		<div class="imagen-con-nombre">
+			<a href="RECETAS/Rd2.html">    
+				<img src="IMG/yk2.avif" alt="Imagen 2">
+			</a>
+			<p>Pollo Asado al Limon</p>
+		</div>
+		<div class="imagen-con-nombre">
+			<a href="RECETAS/Rd3.html">
+				<img src="IMG/yk3.webp" alt="Imagen 3">
+			</a>
+			<p>Ensalada de Jardin</p>
+		</div>
+	</div>
+	
+
+	<div class="capa"></div>
+<!--	--------------->
+<input type="checkbox" id="btn-menu">
+<div class="container-menu">
+    <div class="cont-menu">
+        <nav>
+            <label for="btn-menu">🥡</label>
+            <a href="#" id="recetas-link">Recetas</a>
+            <ul class="submenu" id="recetas-submenu">
+                <li><a href="RECETAS/r1.html">Silpancho</a></li>
+                <li><a href="RECETAS/r2.html">Tallarin</a></li>
+                <li><a href="RECETAS/r3.html">Sopa de Mani</a></li>
+                <li><a href="RECETAS/r4.html">Ensalada Rusa</a></li>
+                <li><a href="RECETAS/r5.html">Arroz a la Valenciana</a></li>
+                <li><a href="RECETAS/r6.html">Plato Paceño</a></li>
+                <li><a href="RECETAS/r7.html">Papas Rellenas</a></li>
+                <li><a href="RECETAS/r8.html">Aji de Fideo</a></li>
+                <li><a href="RECETAS/r9.html">Fricasé</a></li>
+            </ul>
+			<nav>
+				<ul>
+					<li><a href="RECETAS/Buscar.html"> Buscar 🔎</a></li>
+					<li><a href="WEB/face.html"><img src="IMG/fa.png" alt="Facebook"> Facebook</a></li>
+					<li><a href="WEB/tw.html"><img src="IMG/tw.png" alt="Twitter"> Twitter</a></li>
+					<li><a href="WEB/inst.html"><img src="IMG/in.png" alt="Instagram"> Instagram</a></li>
+				</ul>
+			</nav>
+			
+    </div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    // Obtener el elemento del botón de menú, el enlace de recetas y el submenú de recetas
+    var btnMenu = document.getElementById('btn-menu');
+    var recetasLink = document.getElementById('recetas-link');
+    var recetasSubmenu = document.getElementById('recetas-submenu');
+
+    // Agregar un listener para el clic en el enlace de recetas
+    recetasLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Evitar que el enlace cambie la URL
+        // Mostrar u ocultar el submenú de recetas
+        if (recetasSubmenu.style.display === 'block') {
+            recetasSubmenu.style.display = 'none';
+        } else {
+            recetasSubmenu.style.display = 'block';
+        }
+    });
+});
+</script>
+</div>
+</body>
+</html>

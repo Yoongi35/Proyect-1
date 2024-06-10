@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+.receta {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.receta img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.receta p {
+    margin: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .receta {
+        max-width: 95%;
+        padding: 10px;
+      }
+    .receta img {
+        width: 100%;
+      }
+    }
+    
+    @media only screen and (max-width: 480px) {
+    .receta {
+        padding: 5px;
+      }
+    }
+    

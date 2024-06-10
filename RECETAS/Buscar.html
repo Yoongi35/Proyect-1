@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ESTILOS/R1-10.css">
+    <title>Buscar Receta</title>
+</head>
+<body>
+    <center><h1>Buscar Receta</h1></center>
+    <form id="searchForm" onsubmit="buscar(); return false;">
+        <center><label for="nombre">Nombre de la Receta:</label></center>
+        <center><input type="text" id="nombre" required></center>
+        <center><button type="submit">Buscar</button></center>
+    </form>
+
+    <!-- Espacio para mostrar los resultados de la búsqueda -->
+    <div id="resultado"></div>
+
+    <script>
+    // Arreglo con los datos de las recetas
+    const recetas = [
+        {
+            nombre: "Silpancho",
+            img: "https://cdn.bolivia.com/gastronomia/2018/01/25/silpancho-boliviano-3574.jpg",
+            ingredientes: [
+                "Carne de res (milanesa)",
+                "Arroz cocido",
+                "Papas fritas",
+                "Huevo frito",
+                "Tomate",
+                "Cebolla",
+                "Aji picante",
+                "Limón",
+                "Perejil",
+                "Sal y pimienta al gusto"
+            ],
+            preparacion: [
+                "Golpea la carne de res para ablandarla y sazona con sal y pimienta.",
+                "Empaniza la carne y fríela en aceite caliente hasta que esté dorada y cocida por dentro.",
+                "Sirve la carne sobre una cama de arroz cocido y papas fritas.",
+                "Acompaña con huevo frito, rodajas de tomate y cebolla.",
+                "Adorna con rodajas de limón, aji picante y perejil picado.",
+                "Sirve caliente y disfruta."
+            ],
+            video: "https://www.youtube.com/embed/RioyfkbLUps"
+        },
+        {
+            nombre: "Plato Paceño",
+            img: "https://azafranbolivia.com/wp-content/uploads/2022/07/plato-paceno-la-paz-bolivia-historia-origen-1024x683.jpg",
+            ingredientes: [
+                "Papa",
+                "Cuero de chancho",
+                "Queso",
+                "Huevo",
+                "Locoto",
+                "Arroz",
+                "Chuño",
+                "Aji",
+                "Chicharrón",
+                "Cebolla"
+            ],
+            preparacion: [
+                "Cocer las papas y los huevos.",
+                "Preparar un chuño picante.",
+                "Freír el chancho y el queso.",
+                "Cocer el arroz.",
+                "Mezclar todos los ingredientes y servir."
+            ],
+            video: "https://www.youtube.com/embed/fEMnWPRmcmM"
+        },
+        {
+    nombre: "Ají de Fideo",
+    img: "https://i.ytimg.com/vi/SeBxsvn_qbw/maxresdefault.jpg",
+    ingredientes: [
+        "250g de fideo cabello de ángel",
+        "1 cebolla picada",
+        "2 tomates picados",
+        "1 zanahoria picada",
+        "1 pimiento picado",
+        "2 dientes de ajo picados",
+        "1 cucharada de ají amarillo molido",
+        "1 litro de caldo de pollo",
+        "Sal y pimienta al gusto",
+        "Aceite vegetal"
+    ],
+    preparacion: [
+        "En una olla, calienta un poco de aceite y sofríe la cebolla, ajo, zanahoria y pimiento hasta que estén dorados.",
+        "Agrega el ají amarillo molido y cocina por un par de minutos.",
+        "Añade los tomates picados y cocina hasta que se forme una salsa.",
+        "Vierte el caldo de pollo y lleva a ebullición.",
+        "Agrega los fideos y cocina hasta que estén tiernos.",
+        "Sirve caliente y disfruta."
+    ],
+    video: "https://www.youtube.com/embed/XlV8Ee12gBo"
+},
+{
+    nombre: "Fricasé",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrwaZPr1K15iy23ZiK_-4PYf1wlxiWRkQrcaE8XXlTYOG4YlMj7OQWkUj39lm2pQbiNrU&usqp=CAU",
+    ingredientes: [
+        "Pollo en presas",
+        "Cebolla",
+        "Ajo",
+        "Pimiento",
+        "Zanahoria",
+        "Papas",
+        "Arvejas",
+        "Caldo de pollo",
+        "Vino blanco (opcional)",
+        "Aceite de oliva",
+        "Sal y pimienta al gusto"
+    ],
+    preparacion: [
+        "En una olla grande, calienta un poco de aceite y dora el pollo por todos lados. Retira y reserva.",
+        "En la misma olla, sofríe la cebolla, el ajo y el pimiento picados.",
+        "Agrega las zanahorias cortadas en rodajas y cocina unos minutos.",
+        "Vuelve a incorporar el pollo a la olla y añade las papas cortadas en cubos y las arvejas.",
+        "Vierte el caldo de pollo y el vino blanco si lo estás usando. Deja cocinar a fuego medio hasta que las papas estén tiernas y el pollo esté bien cocido.",
+        "Sazona con sal y pimienta al gusto.",
+        "Sirve caliente y disfruta acompañado de arroz blanco."
+    ],
+    video: "https://www.youtube.com/embed/Pfbrc5B-BMs"
+},
+{
+    nombre: "Pique Macho",
+    img: "IMG/yk1.webp",
+    ingredientes: [
+        "Carne de res en tiras",
+        "Papas fritas",
+        "Salchichas",
+        "Cebolla",
+        "Tomate",
+        "Locoto (ají picante)",
+        "Huevos",
+        "Sal y pimienta al gusto",
+        "Mayonesa y ketchup para servir"
+    ],
+    preparacion: [
+        "Freír las papas y reservar.",
+        "En una sartén aparte, dorar la carne de res con la cebolla y los tomates.",
+        "Añadir las salchichas cortadas en trozos y el locoto picado.",
+        "Cuando esté todo bien cocido, añadir las papas fritas.",
+        "Servir caliente acompañado de huevos fritos y salsas al gusto."
+    ],
+    video: "https://www.youtube.com/embed/Y_Ckwty5dks"
+},
+{
+    nombre: "Pollo Asado al Limón",
+    img: "IMG/yk2.avif",
+    ingredientes: [
+        "1 pollo entero",
+        "2 limones",
+        "Aceite de oliva",
+        "Sal y pimienta al gusto",
+        "Especias al gusto (tomillo, romero, perejil, etc.)"
+    ],
+    preparacion: [
+        "Prepara una mezcla con el jugo de un limón, aceite de oliva, sal, pimienta y las especias que prefieras.",
+        "Lava y seca el pollo, y luego úntalo con la mezcla preparada.",
+        "Corta el otro limón en rodajas y colócalas dentro del pollo.",
+        "Deja reposar el pollo en la mezcla marinada durante al menos una hora en la nevera.",
+        "Prende el horno a 180°C y hornea el pollo durante aproximadamente 1 hora o hasta que esté dorado y bien cocido.",
+        "Sirve caliente y ¡disfruta!"
+    ],
+    video: "https://www.youtube.com/embed/W8FxnCVcwu4"
+},
+{
+    nombre: "Ensalada de Jardín",
+    img: "IMG/yk3.webp",
+    ingredientes: [
+        "Lechuga",
+        "Tomate",
+        "Pepino",
+        "Zanahoria",
+        "Apio",
+        "Aderezo de vinagreta o ranch al gusto"
+    ],
+    preparacion: [
+        "Lava y corta todas las verduras en trozos.",
+        "Mezcla las verduras en un tazón grande.",
+        "Añade el aderezo de tu elección y mezcla bien.",
+        "Sirve la ensalada fría y disfruta de su frescura."
+    ],
+    video: "https://www.youtube.com/embed/dMMKqmSLkdI"
+},
+        {
+            nombre: "Papas Rellenas",
+            img: "https://www.hotrodsrecipes.com/wp-content/uploads/2022/10/cuban-papas-rellenas.jpg",
+            ingredientes: [
+                "Papas",
+                "Carne molida",
+                "Cebolla",
+                "Ajo",
+                "Pimiento",
+                "Huevo",
+                "Harina de trigo",
+                "Pan rallado",
+                "Aceite vegetal",
+                "Sal y pimienta al gusto"
+            ],
+            preparacion: [
+                "Cocina las papas en agua hirviendo con sal hasta que estén tiernas. Deja enfriar y pélalas.",
+                "En una sartén, sofríe la cebolla, el ajo y el pimiento picados.",
+                "Agrega la carne molida y cocina hasta que esté dorada y cocida.",
+                "Machaca las papas cocidas y mézclalas con la carne sofrita.",
+                "Forma bolitas con la mezcla y haz un hueco en el centro de cada una.",
+                "Rellena cada hueco con un poco de huevo batido y cierra la bolita.",
+                "Pasa las bolitas por harina de trigo, huevo batido y pan rallado.",
+                "Fríe las papas rellenas en aceite caliente hasta que estén doradas y crujientes.",
+                "Escurre sobre papel absorbente, sirve caliente y disfruta."
+            ],
+            video: "https://www.youtube.com/embed/UfNf306MOY0"
+        },
+        {
+            nombre: "Arroz a la Valenciana",
+            img: "https://cloudinary-cdn.whisk.com/image/upload/g_auto,c_fill,q_60,f_auto,h_630,w_1200/v1685738516/recipe/22f6a3ca80424d0c3280f97a286f7804.jpg",
+            ingredientes: [
+                "Arroz",
+                "Pollo",
+                "Pimientos rojos y verdes",
+                "Guisantes",
+                "Zanahorias",
+                "Cebolla",
+                "Ajo",
+                "Tomate triturado",
+                "Caldo de pollo",
+                "Azafrán o colorante alimentario",
+                "Aceite de oliva",
+                "Sal y pimienta al gusto",
+            ],
+            preparacion: [
+                "En una olla grande, calienta un poco de aceite y dora el pollo troceado. Reserva.",
+                "En la misma olla, sofríe la cebolla, el ajo y los pimientos picados.",
+                "Añade las zanahorias cortadas en cubitos y los guisantes.",
+                "Mezcla el tomate triturado y deja cocinar unos minutos.",
+                "Incorpora el arroz y remueve bien para que se impregne del sofrito.",
+                "Agrega el caldo de pollo, el azafrán o colorante alimentario, sal y pimienta al gusto.",
+                "Cocina a fuego medio hasta que el arroz esté tierno y haya absorbido todo el líquido.",
+                "Añade el pollo reservado y mezcla bien.",
+                "Deja reposar unos minutos, sirve caliente y disfruta."
+            ],
+            video: "https://www.youtube.com/embed/BIFt46MXHTA"
+        },
+        {
+            nombre: "Ensalada Rusa",
+            img: "https://www.tqma.com.ec/images/com_yoorecipe/banner_superior/16487_1.jpg",
+            ingredientes: [
+                "Papas",
+                "Zanahorias",
+                "Arvejas",
+                "Huevos",
+                "Mayonesa",
+                "Sal y pimienta al gusto"
+            ],
+            preparacion: [
+                "Cocina las papas y las zanahorias en agua hirviendo hasta que estén tiernas.",
+                "Cocina los huevos en agua hirviendo durante unos 10 minutos, luego enfríalos y pélalos.",
+                "Corta las papas, zanahorias y huevos en cubos pequeños.",
+                "Mezcla las papas, zanahorias, arvejas y huevos en un tazón grande.",
+                "Agrega mayonesa y mezcla bien hasta que todos los ingredientes estén cubiertos uniformemente.",
+                "Sazona con sal y pimienta al gusto.",
+                "Refrigera la ensalada durante al menos una hora antes de servir para que los sabores se mezclen.",
+                "Sirve fría y disfruta."
+            ],
+            video: "https://www.youtube.com/embed/SgCe_h3s13w"
+        },
+        {
+            nombre: "Sopa de Maní",
+            img: "https://recetasbolivia.com/wp-content/uploads/sopa-de-mani-de-bolivia.jpg",
+            ingredientes: [
+                "1 taza de maní tostado",
+                "1 cebolla",
+                "2 dientes de ajo",
+                "1 zanahoria",
+                "1 papa",
+                "1/2 taza de arroz",
+                "1 litro de caldo de pollo",
+                "Sal y pimienta al gusto",
+                "Aceite vegetal",
+                "Cilantro para decorar (opcional)"
+            ],
+            preparacion: [
+                "En una olla grande, calienta un poco de aceite y sofríe la cebolla y el ajo picados hasta que estén dorados.",
+                "Agrega la zanahoria y la papa cortadas en cubos y cocina por unos minutos.",
+                "Añade el maní tostado y el arroz, y cocina por un par de minutos más.",
+                "Vierte el caldo de pollo, lleva a ebullición y cocina a fuego lento hasta que los vegetales estén tiernos y el arroz esté cocido.",
+                "Retira del fuego y deja enfriar un poco.",
+                "Usa una licuadora o procesador de alimentos para mezclar la sopa hasta que esté suave y cremosa.",
+                "Vuelve a calentar la sopa si es necesario y sazona con sal y pimienta al gusto.",
+                "Sirve caliente, decorada con cilantro picado si lo deseas, y disfruta."
+            ],
+            video: "https://www.youtube.com/embed/h5UMaa5hlHQ"
+        },
+        {
+            nombre: "Tallarín",
+            img: "https://chewinghappiness.com/wp-content/uploads/2019/08/Tallarin-Rojo-scaled.jpg",
+            ingredientes: [
+                "Fideos tallarines",
+                "Carne de res",
+                "Aceite vegetal",
+                "Cebolla",
+                "Ajo",
+                "Pimiento",
+                "Tomate",
+                "Sal y pimienta al gusto"
+            ],
+            preparacion: [
+                "Cocina los tallarines en agua hirviendo con sal hasta que estén al dente.",
+                "En una sartén grande, calienta aceite y cocina la carne de res hasta que esté dorada.",
+                "Agrega cebolla, ajo, pimiento y tomate picados y cocina hasta que estén tiernos.",
+                "Añade los tallarines cocidos a la mezcla de carne y verduras.",
+                "Revuelve bien y cocina por unos minutos más.",
+                "Sirve caliente y disfruta."
+            ],
+            video: "https://www.youtube.com/embed/8_QqXpOoVzE"
+        }
+    ];
+
+    // Función para buscar y mostrar la información de la receta
+    function buscar() {
+    const nombre = document.getElementById('nombre').value.trim().toLowerCase(); // Obtener el valor ingresado por el usuario en minúsculas y eliminar espacios en blanco
+    let encontrado = false;
+
+    // Buscar la receta en el arreglo de recetas
+    for (let i = 0; i < recetas.length; i++) {
+        if (recetas[i].nombre.toLowerCase().trim() === nombre) { // Convertir el nombre de la receta a minúsculas y eliminar espacios en blanco
+            const receta = recetas[i];
+            encontrado = true;
+
+            // Actualizar el contenido del elemento HTML con la información de la receta encontrada
+            document.getElementById('resultado').innerHTML = `
+                <div class="recipe-container">
+                    <h1>${receta.nombre}</h1>
+                    <img src="${receta.img}" alt="${receta.nombre}" width="700">
+                
+                    <div class="flex-container">
+                        <div class="section">
+                            <h2>Ingredientes:</h2>
+                            <ul>
+                                ${receta.ingredientes.map(ingrediente => `<li>${ingrediente}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <div class="section">
+                            <h2>Instrucciones:</h2>
+                            <ol>
+                                ${receta.preparacion.map(paso => `<li>${paso}</li>`).join('')}
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="media-container">
+                        <iframe width="652" height="367" src="${receta.video}" title="Video de ${receta.nombre}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            `;
+            break;
+        }
+    }
+
+    // Si no se encuentra la receta, mostrar un mensaje de error
+    if (!encontrado) {
+        document.getElementById('resultado').innerHTML = '<p>Receta no encontrada. Por favor, intenta con otro nombre.</p>';
+    }
+}
+
+    </script>
+</body>
+</html>

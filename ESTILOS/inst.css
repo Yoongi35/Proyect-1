@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://wallpapers-clan.com/wp-content/uploads/2023/03/lamp-fairycore-aesthetic-wallpaper.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la ruta de tu imagen */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.login-form-instagram {
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 80%; 
+    max-width: 300px;
+    margin: auto;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #125688; /* Azul de Instagram */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0A66C8; /* Oscurecido para el hover */
+}
+
+/* Media Queries para hacer el formulario responsive */
+@media (max-width: 768px) {
+  .login-form-instagram {
+        width: 95%; /* Ajustar el ancho para pantallas pequeñas */
+    }
+}

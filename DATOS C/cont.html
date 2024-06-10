@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../ESTILOS/cont.css">
+    <title>Contacto - Chez Panisse Crea</title>
+</head>
+<body class="fadeIn">
+
+<div class="container">
+
+    <h1>Contacto - Chez Panisse Crea</h1>
+
+    <form id="contactForm" action="/submit_contact_form" method="post">
+        <input type="text" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" name="correo" placeholder="Tu correo electrónico" required>
+        <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+        <button type="submit" id="enviarBoton">Enviar</button>
+    </form>
+
+    <div style="margin-top: 40px;">
+        <strong>Dirección:</strong> Calle sweet12, Broklyn<br>
+        <strong>Teléfono:</strong> +34 123 456 789<br>
+        <strong>Email:</strong> info@chezpanissecrea.com
+    </div>
+
+</div>
+<script src="../SCRIPT/cont.js"></script>
+</body>
+</html>

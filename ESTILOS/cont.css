@@ -1,0 +1,97 @@
+/* Estilos base para pantallas grandes */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://i.pinimg.com/564x/18/e0/36/18e0361e4927260c83b17b27e66b9f80.jpg);
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 900px; /* Aumentado para mayor amplitud */
+    width: 90%;
+    padding: 40px; /* Aumentado para crear espacio interior */
+    background-color: rgba(163, 206, 202, 0.934);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Ajustes para los inputs y textarea para que estén uno debajo del otro */
+input[type="text"], input[type="email"], textarea {
+    margin-bottom: 30px; /* Aumentado para mayor espacio entre elementos */
+    padding: 15px; /* Aumentado para mayor comodidad de escritura */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, #ffdce0, #fff9f7);
+    color: #673ab7;
+    font-size: 18px; /* Aumentado para mayor legibilidad */
+    width: 100%; /* Hacer que los inputs y textarea ocupen todo el ancho disponible */
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #c0392b;
+    outline: none;
+}
+
+button {
+    padding: 15px 25px; /* Aumentado para mayor tamaño */
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 20px; /* Aumentado para mayor espacio entre el textarea y el botón */
+    width: 100%; /* Hacer que el botón ocupe todo el ancho disponible */
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Animación de fade-in */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+}
+
+/* Media query para dispositivos medianos y grandes */
+@media (min-width: 601px) and (max-width: 1024px) {
+.container {
+        width: 85%; /* Ajusta el ancho para pantallas medianas */
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        font-size: 16px; /* Aumenta el tamaño de fuente para pantallas medianas */
+    }
+
+    button {
+        font-size: 16px; /* Aumenta el tamaño de fuente para pantellas medianas */
+    }
+}
+
+/* Media query para dispositivos grandes */
+@media (min-width: 1025px) {
+.container {
+        width: 70%; /* Ajusta el ancho para pantallas grandes */
+    }
+
+    input[type="text"], input[type="email"], textarea {
+        font-size: 20px; /* Aumenta el tamaño de fuente para pantallas grandes */
+    }
+
+    button {
+        font-size: 20px; /* Aumenta el tamaño de fuente para pantellas grandes */
+    }
+}

@@ -1,0 +1,151 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(https://i.pinimg.com/564x/a1/fb/41/a1fb412f61691b11057143eff7966e03.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: #c0392b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#registrationForm {
+    width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    color: white;
+}
+
+#registrationForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="email"],
+#registrationForm input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+#registrationForm input[type="text"]:focus,
+#registrationForm input[type="email"]:focus,
+#registrationForm input[type="password"]:focus {
+    border-color: #c0392b;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 35px;
+}
+
+#registrationForm button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #c0392b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#registrationForm button[type="submit"]:hover {
+    background-color: #b03526;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+    #registrationForm {
+        width: 80%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .media-container iframe {
+        height: 300px; /* Ajustamos la altura del video */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #registrationForm {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    #registrationForm input[type="text"],
+    #registrationForm input[type="email"],
+    #registrationForm input[type="password"] {
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+
+    #registrationForm button[type="submit"] {
+        padding: 10px 15px;
+    }
+
+    .media-container iframe {
+        height: 250px; /* Reducimos más la altura del video */
+    }
+}
+
+@media only screen and (max-width: 364px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .recipe-container {
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    #registrationForm label {
+        font-size: 14px;
+    }
+
+    #registrationForm input[type="text"],
+    #registrationForm input[type="email"],
+    #registrationForm input[type="password"] {
+        padding: 8px 12px;
+        margin-bottom: 15px;
+        font-size: 14px;
+    }
+
+    #registrationForm button[type="submit"] {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .media-container iframe {
+        height: 180px; /* Altura mínima para el video */
+    }
+}

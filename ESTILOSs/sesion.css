@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, transparent 70%), url('https://i.pinimg.com/564x/a1/fb/41/a1fb412f61691b11057143eff7966e03.jpg');
+    color: #c0392b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+#loginForm {
+    width: 90%;
+    max-width: 400px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+    color: white;
+}
+#loginForm label {
+    display: block;
+    margin-bottom: 10px;
+}
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    border-radius: 50px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+#loginForm input[type="text"]:focus,
+#loginForm input[type="password"]:focus {
+    border-color: #c0392b;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 35px;
+}
+#loginForm button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #c0392b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#loginForm button[type="submit"]:hover {
+    background-color: #b03526;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    body {
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, transparent 90%), url('https://i.pinimg.com/564x/a1/fb/41/a1fb412f61691b11057143eff7966e03.jpg');
+        background-size: cover;
+        height: auto;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    #loginForm {
+        max-width: 350px;
+        padding: 30px;
+    }
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        padding: 10px 15px;
+        margin-bottom: 20px;
+    }
+    #loginForm button[type="submit"] {
+        padding: 10px 15px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, transparent 100%), url('https://i.pinimg.com/564x/a1/fb/41/a1fb412f61691b11057143eff7966e03.jpg');
+        background-size: cover;
+        height: auto;
+        padding: 10px;
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    #loginForm {
+        max-width: 300px;
+        padding: 20px;
+    }
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        padding: 8px 10px;
+        margin-bottom: 15px;
+    }
+    #loginForm button[type="submit"] {
+        padding: 8px 10px;
+    }
+}
+
+@media only screen and (max-width: 364px) {
+    body {
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.98) 0%, transparent 100%), url('https://i.pinimg.com/564x/a1/fb/41/a1fb412f61691b11057143eff7966e03.jpg');
+        background-size: cover;
+        height: auto;
+        padding: 5px;
+    }
+    h1 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    #loginForm {
+        max-width: 250px;
+        padding: 15px;
+    }
+    #loginForm input[type="text"],
+    #loginForm input[type="password"] {
+        padding: 6px 8px;
+        margin-bottom: 10px;
+    }
+    #loginForm button[type="submit"] {
+        padding: 6px 8px;
+    }
+}

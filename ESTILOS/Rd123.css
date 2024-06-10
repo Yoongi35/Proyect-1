@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url(https://img.freepik.com/vector-gratis/ilustracion-ramen-dibujada-mano_52683-154810.jpg?size=626&ext=jpg);
+}
+
+.recipe-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+h1 {
+    color: #ff6666;
+    font-size: 45;
+}
+
+img, .media-container {
+    margin: 20px auto; 
+    display: block; 
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.section {
+    width: 48%;
+    text-align: left; 
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .recipe-container {
+          max-width: 95%;
+      }
+  }
+  
+  @media only screen and (max-width: 992px) {
+    .section {
+          width: 100%;
+          text-align: center;
+      }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .flex-container {
+          flex-direction: column;
+      }
+  }
+  
+  @media only screen and (max-width: 576px) {
+      h1 {
+          font-size: 24px;
+      }
+      
+      img,.media-container {
+          margin: 10px auto;
+      }
+      
+      ul, ol {
+          padding-left: 10px;
+      }
+      
+      li {
+          margin-bottom: 3px;
+      }
+  }
+  

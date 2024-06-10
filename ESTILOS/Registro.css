@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, transparent 70%), url('https://images.unsplash.com/photo-1519638399535-1b036603ac77?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5pbWV8ZW58MHx8MHx8fDA%3D');
+    background-size: cover;
+    background-position: center;
+    color: #455acf; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+#registrationForm {
+    width: 400px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background-image: linear-gradient(to right, #fbc2eb, #a6c1ee); 
+    color: white;
+}
+
+#registrationForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#registrationForm input[type="text"],
+#registrationForm input[type="email"],
+#registrationForm input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+    border-radius: 40px;
+    border: 2px solid #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+#registrationForm input[type="text"]:focus,
+#registrationForm input[type="email"]:focus,
+#registrationForm input[type="password"]:focus {
+    border-color: #c0392b;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#registrationForm button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #c0392b;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+}
+
+#registrationForm button[type="submit"]:hover {
+    background-color: #b03526;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    body {
+        padding: 20px;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 2.2em;
+        margin-bottom: 20px;
+    }
+
+    #registrationForm {
+        width: 100%;
+        max-width: 500px;
+        padding: 20px;
+    }
+
+    #registrationForm label {
+        font-size: 1em;
+    }
+
+    #registrationForm input[type="text"],
+    #registrationForm input[type="email"],
+    #registrationForm input[type="password"],
+    #registrationForm button[type="submit"] {
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    #registrationForm {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    #registrationForm label {
+        font-size: 0.9em;
+    }
+
+    #registrationForm input[type="text"],
+    #registrationForm input[type="email"],
+    #registrationForm input[type="password"] {
+        padding: 10px 15px;
+        margin-bottom: 20px;
+        border-radius: 30px;
+    }
+
+    #registrationForm button[type="submit"] {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media only screen and (max-width: 364px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        margin-left: 5px;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+    }
+
+    #registrationForm {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    #registrationForm label {
+        font-size: 0.8em;
+        margin-bottom: 5px;
+    }
+
+    #registrationForm input[type="text"],
+    #registrationForm input[type="email"],
+    #registrationForm input[type="password"] {
+        padding: 8px 12px;
+        margin-bottom: 15px;
+        border-radius: 20px;
+        font-size: 0.8em;
+    }
+
+    #registrationForm button[type="submit"] {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+}
